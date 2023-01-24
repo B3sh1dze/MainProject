@@ -1,8 +1,6 @@
-﻿
-using System.IO;
+﻿using System.IO;
 using System.Globalization;
 using System.Drawing;
-
 namespace Midterm
 {
     public class Program

@@ -10,8 +10,6 @@ namespace MainProject
     public class TicTacToe
     {
         char[] array = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' };
-        static public int cCount = 0;
-        static public int pCount = 0;
         public bool running = true;
         private const string ACCOUNTS_HISTORY_FILE_PATH = @"C:\Users\99559\Desktop\MainProject\MainProject\AccountHistory.txt";
         public void drawBoard(string userName)
@@ -28,7 +26,6 @@ namespace MainProject
             Console.WriteLine($"  {array[6]}  |  {array[7]}  |  {array[8]}  ");
             Console.WriteLine("     |     |     ");
         }
-
         public void playersMove(string userName)
         {
             while (true)
@@ -47,13 +44,11 @@ namespace MainProject
                 }
             }
         }
-
         public void computersMove(string userName)
         {
             Random randNum = new Random();
             int computersMove = randNum.Next(1, 9);
             int arrayIndex = computersMove - 1;
-
             while (true)
             {
                 if (array[arrayIndex] == ' ')
@@ -68,7 +63,6 @@ namespace MainProject
                 }
             }
         }
-
         public bool checkWinner(string userName)
         {
             if (array[0] != ' ' && array[0] == array[1] && array[1] == array[2])
@@ -77,7 +71,6 @@ namespace MainProject
                 {
                     Console.WriteLine($"{userName} wins");
                     File.AppendAllText(ACCOUNTS_HISTORY_FILE_PATH, userName + " won Tic-Tac-Toe game against computer at " + DateTime.Now + Environment.NewLine);
-                    pCount++;
                     running = false;
                     return false;
                 }
@@ -85,7 +78,6 @@ namespace MainProject
                 {
                     Console.WriteLine("computer wins");
                     File.AppendAllText(ACCOUNTS_HISTORY_FILE_PATH, userName + " lost Tic-Tac-Toe game against computer at " + DateTime.Now + Environment.NewLine);
-                    cCount++;
                     running = false;
                     return false;
                 }
@@ -96,7 +88,6 @@ namespace MainProject
                 {
                     Console.WriteLine($"{userName} wins");
                     File.AppendAllText(ACCOUNTS_HISTORY_FILE_PATH, userName + " won Tic-Tac-Toe game against computer at " + DateTime.Now + Environment.NewLine);
-                    pCount++;
                     running = false;
                     return false;
                 }
@@ -104,7 +95,6 @@ namespace MainProject
                 {
                     Console.WriteLine("computer wins");
                     File.AppendAllText(ACCOUNTS_HISTORY_FILE_PATH, userName + " lost Tic-Tac-Toe game against computer at " + DateTime.Now + Environment.NewLine);
-                    cCount++;
                     running = false;
                     return false;
                 }
@@ -115,7 +105,6 @@ namespace MainProject
                 {
                     Console.WriteLine($"{userName} wins");
                     File.AppendAllText(ACCOUNTS_HISTORY_FILE_PATH, userName + " won Tic-Tac-Toe game against computer at " + DateTime.Now + Environment.NewLine);
-                    pCount++;
                     running = false;
                     return false;
                 }
@@ -123,7 +112,6 @@ namespace MainProject
                 {
                     Console.WriteLine("computer wins");
                     File.AppendAllText(ACCOUNTS_HISTORY_FILE_PATH, userName + " lost Tic-Tac-Toe game against computer at " + DateTime.Now + Environment.NewLine);
-                    cCount++;
                     running = false;
                     return false;
                 }
@@ -134,7 +122,6 @@ namespace MainProject
                 {
                     Console.WriteLine($"{userName} wins");
                     File.AppendAllText(ACCOUNTS_HISTORY_FILE_PATH, userName + " won Tic-Tac-Toe game against computer at " + DateTime.Now + Environment.NewLine);
-                    pCount++;
                     running = false;
                     return false;
                 }
@@ -142,7 +129,6 @@ namespace MainProject
                 {
                     Console.WriteLine("computer wins");
                     File.AppendAllText(ACCOUNTS_HISTORY_FILE_PATH, userName + " lost Tic-Tac-Toe game against computer at " + DateTime.Now + Environment.NewLine);
-                    cCount++;
                     running = false;
                     return false;
                 }
@@ -153,7 +139,6 @@ namespace MainProject
                 {
                     Console.WriteLine($"{userName} wins");
                     File.AppendAllText(ACCOUNTS_HISTORY_FILE_PATH, userName + " won Tic-Tac-Toe game against computer at " + DateTime.Now + Environment.NewLine);
-                    pCount++;
                     running = false;
                     return false;
                 }
@@ -161,7 +146,6 @@ namespace MainProject
                 {
                     Console.WriteLine("computer wins");
                     File.AppendAllText(ACCOUNTS_HISTORY_FILE_PATH, userName + " lost Tic-Tac-Toe game against computer at " + DateTime.Now + Environment.NewLine);
-                    cCount++;
                     running = false;
                     return false;
                 }
@@ -172,7 +156,6 @@ namespace MainProject
                 {
                     Console.WriteLine($"{userName} wins");
                     File.AppendAllText(ACCOUNTS_HISTORY_FILE_PATH, userName + " won Tic-Tac-Toe game against computer at " + DateTime.Now + Environment.NewLine);
-                    pCount++;
                     running = false;
                     return false;
                 }
@@ -180,7 +163,6 @@ namespace MainProject
                 {
                     Console.WriteLine("computer wins");
                     File.AppendAllText(ACCOUNTS_HISTORY_FILE_PATH, userName + " lost Tic-Tac-Toe game against computer at " + DateTime.Now + Environment.NewLine);
-                    cCount++;
                     running = false;
                     return false;
                 }
@@ -191,7 +173,6 @@ namespace MainProject
                 {
                     Console.WriteLine($"{userName} wins");
                     File.AppendAllText(ACCOUNTS_HISTORY_FILE_PATH, userName + " won Tic-Tac-Toe game against computer at " + DateTime.Now + Environment.NewLine);
-                    pCount++;
                     running = false;
                     return false;
                 }
@@ -199,7 +180,6 @@ namespace MainProject
                 {
                     Console.WriteLine("computer wins");
                     File.AppendAllText(ACCOUNTS_HISTORY_FILE_PATH, userName + " lost Tic-Tac-Toe game against computer at " + DateTime.Now + Environment.NewLine);
-                    cCount++;
                     running = false;
                     return false;
                 }
@@ -210,7 +190,6 @@ namespace MainProject
                 {
                     Console.WriteLine($"{userName} wins");
                     File.AppendAllText(ACCOUNTS_HISTORY_FILE_PATH, userName + " won Tic-Tac-Toe game against computer at " + DateTime.Now + Environment.NewLine);
-                    pCount++;
                     running = false;
                     return false;
                 }
@@ -218,7 +197,6 @@ namespace MainProject
                 {
                     Console.WriteLine("computer wins");
                     File.AppendAllText(ACCOUNTS_HISTORY_FILE_PATH, userName + " lost Tic-Tac-Toe game against computer at " + DateTime.Now + Environment.NewLine);
-                    cCount++;
                     running = false;
                     return false;
                 }
@@ -235,10 +213,9 @@ namespace MainProject
                 playersMove(userName);
                 computersMove(userName);
                 checkWinner(userName);
+                Console.WriteLine("After computer's move.");
                 drawBoard(userName);
-                //running = checkWinner(userName);
             }
-        }
-        
+        }  
     }
 }

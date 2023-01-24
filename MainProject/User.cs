@@ -8,7 +8,6 @@
         public string? Password { get; set; }
         public DateTime BirthDate { get; set; }
         public DateTime CreatedAt { get; set; }
-
         public override string? ToString()
         {
             return $"{UserName}-{FirstName}-{LastName}-{BirthDate}-{CreatedAt}";
@@ -31,9 +30,9 @@
             };
             return user;
         }
-        public static User CheckHistory(string hist)
+        public static User CheckHistory(string info)
         {
-            var parts = hist.Split("-");
+            var parts = info.Split('-');
             var user = new User()
             {
                 UserName = parts[0]

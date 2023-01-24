@@ -5,10 +5,9 @@ namespace Midterm
 {
     public class Library
     {
-        private int lineNumber;
         private const string USERNAMES_FILE_PATH = @"C:\Users\99559\Desktop\MainProject\MainProject\UserNames.txt";
         private const string USERS_FILE_PATH = @"C:\Users\99559\Desktop\MainProject\MainProject\Users.txt";
-        private const string PASSWORDS_FILE_PATH = @"C:\Users\99559\Desktop\MainProject\MainProject\PassWords.txt";
+        private const string PASSWORDS_FILE_PATH = @"C:\Users\99559\Desktop\MainProject\MainProject\Passwords.txt";
         private const string ACCOUNTS_HISTORY_FILE_PATH = @"C:\Users\99559\Desktop\MainProject\MainProject\AccountHistory.txt";
 
         private User CreateUser()
@@ -25,9 +24,9 @@ namespace Midterm
                     {
                     Console.WriteLine("The password is correct.");
                     MainMenu(userName!);
-                    return null;
+                    return null!;
                     }
-                return null;
+                return null!;
             }
             else 
             {
@@ -47,8 +46,8 @@ namespace Midterm
                 var passWord = Console.ReadLine();
                 Console.WriteLine();
                 Console.Write("Enter birth date (mm-d-yyyy: ");
-                var birthDate = DateTime.Parse(Console.ReadLine());
-                MainMenu(userName!);
+                var birthDate = DateTime.Parse(Console.ReadLine()!);
+                Console.WriteLine("your data will be saved after quitting!");
 
                 var newUser = new User()
                 {
@@ -60,9 +59,10 @@ namespace Midterm
                     CreatedAt = DateTime.Now
                 };
                 Console.WriteLine();
-                return null;
+                MainMenu(userName!);
+                return newUser;
+                
             }
-            
         }
         public void DisplayAllUsers()
         {
@@ -88,20 +88,15 @@ namespace Midterm
                 return;
             }
             var formattedUser = user.ToString();
-
             Console.WriteLine(user);
-
             File.AppendAllText(USERNAMES_FILE_PATH,
                     formattedUser + Environment.NewLine);
             File.AppendAllText(USERS_FILE_PATH, user.UserName + Environment.NewLine);
             File.AppendAllText(PASSWORDS_FILE_PATH, user.Password + Environment.NewLine);
         }
-
         private bool IsUserRegistered(string userName)
         {
             var usersList = File.ReadAllLines(USERNAMES_FILE_PATH);
-            lineNumber = 1;
-
             foreach (var str in usersList)
             {
                 var user = User.CheckUser(str);
@@ -109,7 +104,6 @@ namespace Midterm
                 {
                     return true;
                 }
-                lineNumber++;
             }
             return false;
         }
@@ -138,13 +132,7 @@ namespace Midterm
                 }        
             }
         }
-        public void Login(string passWord)
-        {
-            Console.Write("Please enter your password: ");
-            passWord = Console.ReadLine();
-        }
-
-        void MainMenu(string userName)
+        public void MainMenu(string userName)
         {
             Console.WriteLine();
             Console.WriteLine($"Welcome {userName} to our platform!");
@@ -155,11 +143,11 @@ namespace Midterm
                 Console.WriteLine("press 1 to play TicTacToe game.");
                 Console.WriteLine("press 2 to play Number Guessing game.");
                 Console.WriteLine("press 3 to play Rock-Paper-Scissors game.");
-                Console.WriteLine("if you want to show up your account history press 4.");
+                Console.WriteLine("if you want to show up game history press 4.");
                 Console.WriteLine("to see all accounts press 5.");
                 Console.WriteLine("if you want to exit press 'q'.");
                 Console.WriteLine();
-                char playersChoice = Convert.ToChar(Console.ReadLine());
+                char playersChoice = Convert.ToChar(Console.ReadLine()!);
                 if (playersChoice == '1')
                 {
                     var tic = new TicTacToe(userName);
