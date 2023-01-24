@@ -148,10 +148,10 @@ namespace Midterm
         {
             Console.WriteLine();
             Console.WriteLine($"Welcome {userName} to our platform!");
+            Console.WriteLine("if you want to entertain there is some kind of games");
             while (true)
             {
                 Console.WriteLine();
-                Console.WriteLine("if you want to entertain there is some kind of games");
                 Console.WriteLine("press 1 to play TicTacToe game.");
                 Console.WriteLine("press 2 to play Number Guessing game.");
                 Console.WriteLine("press 3 to play Rock-Paper-Scissors game.");
