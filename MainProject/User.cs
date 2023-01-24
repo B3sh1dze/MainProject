@@ -43,7 +43,6 @@
         public static User ParseUser(string info)
         {
             var parts = info.Split('-');
-
             var user = new User()
             {
                 UserName = parts[0],
@@ -52,7 +51,6 @@
                 BirthDate = DateTime.Parse(parts[3]),
                 CreatedAt = DateTime.Parse(parts[4]),
             };
-
             return user;
         }
 

@@ -3,3 +3,5 @@ guramiko lost Tic-Tac-Toe game against computer at 1/24/2023 2:19:03 PM
 guramiko won Tic-Tac-Toe game against computer at 1/24/2023 2:20:47 PM
 guramiko won Number Guessing Game against computer at 1/24/2023 2:23:33 PM
 guramiko lost Rock-Paper-Scissors Game against computer at 1/24/2023 2:26:31 PM
+guramaa won Tic-Tac-Toe game against computer at 1/24/2023 3:01:59 PM
+guramiko won Tic-Tac-Toe game against computer at 1/24/2023 3:04:47 PM

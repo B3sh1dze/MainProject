@@ -64,9 +64,6 @@ namespace Midterm
             }
             
         }
-
-        // overriding string method would do the work too
-
         public void DisplayAllUsers()
         {
             var usersList = File.ReadAllLines(USERNAMES_FILE_PATH);
@@ -76,29 +73,12 @@ namespace Midterm
                 Console.WriteLine("No users found");
                 return;
             }
-
             foreach (var str in usersList)
             {
                 var user = User.ParseUser(str);
                 Console.WriteLine(user);
             }
         }
-        //public void DisplayAllUserNames()
-        //{
-        //    var usersList = File.ReadAllLines(USERS_FILE_PATH);
-
-        //    if (usersList.Length == 0)
-        //    {
-        //        Console.WriteLine("No usernames found");
-        //        return;
-        //    }
-
-        //    foreach (var str in usersList)
-        //    {
-        //        var user = User.ParseUser(str);
-        //        Console.WriteLine(user);
-        //    }
-        //}
         public void RegisterUser()
         {
             var user = CreateUser();
@@ -107,14 +87,10 @@ namespace Midterm
             {
                 return;
             }
-
-            // get user in format ...-...-...-...-...
-
             var formattedUser = user.ToString();
 
             Console.WriteLine(user);
 
-            // save user in txt file
             File.AppendAllText(USERNAMES_FILE_PATH,
                     formattedUser + Environment.NewLine);
             File.AppendAllText(USERS_FILE_PATH, user.UserName + Environment.NewLine);
@@ -128,7 +104,6 @@ namespace Midterm
 
             foreach (var str in usersList)
             {
-               // Console.WriteLine(str);
                 var user = User.CheckUser(str);
                 if (user.UserName == userName)
                 {
@@ -171,9 +146,11 @@ namespace Midterm
 
         void MainMenu(string userName)
         {
+            Console.WriteLine();
+            Console.WriteLine($"Welcome {userName} to our platform!");
             while (true)
             {
-                Console.WriteLine($"Welcome {userName} to our platform!");
+                Console.WriteLine();
                 Console.WriteLine("if you want to entertain there is some kind of games");
                 Console.WriteLine("press 1 to play TicTacToe game.");
                 Console.WriteLine("press 2 to play Number Guessing game.");
@@ -181,6 +158,7 @@ namespace Midterm
                 Console.WriteLine("if you want to show up your account history press 4.");
                 Console.WriteLine("to see all accounts press 5.");
                 Console.WriteLine("if you want to exit press 'q'.");
+                Console.WriteLine();
                 char playersChoice = Convert.ToChar(Console.ReadLine());
                 if (playersChoice == '1')
                 {
