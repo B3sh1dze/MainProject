@@ -15,7 +15,7 @@ namespace Midterm
 
             var library = new Library();
 
-            //library.DisplayAllUsers();
+            
             library.RegisterUser();
             //library.DisplayAllUsers();
 

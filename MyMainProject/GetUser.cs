@@ -8,7 +8,8 @@ namespace MyMainProject
 {
     public class GetUser
     {
-        private const string USERS_FILE_PATH = @"C:\Users\99559\Desktop\MainProject\MyMainProject\Users.txt";
+        private const string USERS_FILE_PATH = @"C:\Users\99559\Desktop\MainProject\UserNames1.txt";
+        private const string USERNAMES_FILE_PATH = @"C:\Users\99559\Desktop\MainProject\UserNames.txt";
 
         private User CreateUser()
         {
@@ -47,6 +48,7 @@ namespace MyMainProject
             }
             var formattedUser = user.ToString();
             File.AppendAllText(USERS_FILE_PATH, formattedUser + Environment.NewLine);
+           // File.AppendAllText(USERNAMES_FILE_PATH, user.UserName + Environment.NewLine);
         }
         private bool IsUserRegistered(string userName)
         {
